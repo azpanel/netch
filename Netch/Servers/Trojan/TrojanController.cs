@@ -42,10 +42,10 @@ public class TrojanController : Guard, IServerController
             }
         };
 
-        await using (var fileStream = new FileStream(Constants.TempConfig, FileMode.Create, FileAccess.Write, FileShare.Read))
-        {
-            await JsonSerializer.SerializeAsync(fileStream, trojanConfig, Global.NewCustomJsonSerializerOptions());
-        }
+        //await using (var fileStream = new FileStream(Constants.TempConfig, FileMode.Create, FileAccess.Write, FileShare.Read))
+        //{
+        //    await JsonSerializer.SerializeAsync(fileStream, trojanConfig, Global.NewCustomJsonSerializerOptions());
+        //}
 
         await StartGuardAsync("-config ..\\data\\last.json");
         return new Socks5Server(IPAddress.Loopback.ToString(), this.Socks5LocalPort(), server.Hostname);
