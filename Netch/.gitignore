@@ -1,4 +1,5 @@
 /bin
 /obj
+/Properties/PublishProfiles
 /*.csproj.user
 FodyWeavers.xsd
